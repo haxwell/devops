@@ -47,14 +47,15 @@ echo -e '\n\n\n DONE! Now log out of root, and in as quizki.\n\n\n'
 4. CTRL-D from root.. back at localhost.. Copy id_rsa and id_rsa.pub to the new environment.
 
 # from the local dev machine, run..
-scp ~/.ssh/id_rsa quizki@157.230.206.239:/home/quizki/.ssh/id_rsa
-scp ~/.ssh/id_rsa.pub quizki@157.230.206.239:/home/quizki/.ssh/id_rsa.pub
+NEW_IP_ADDR=165.227.109.239
+scp ~/.ssh/id_rsa quizki@$NEW_IP_ADDR:/home/quizki/.ssh/id_rsa
+scp ~/.ssh/id_rsa.pub quizki@$NEW_IP_ADDR:/home/quizki/.ssh/id_rsa.pub
 
 5. Copy the installation script from the config server
 
 # log back in to the droplet
-ssh quizki@157.230.206.239
-scp pi@98.245.226.182:/home/pi/haxwell_infrastructure/new-server-install.sh .
+ssh quizki@$NEW_IP_ADDR
+scp pi@98.245.226.182:/home/pi/haxwell-devops/bin/new-server-install.sh .
 
 6. run the script to do the app install
 
