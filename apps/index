@@ -1,0 +1,8 @@
+
+jdk-8u221-linux-x64.tar.gz
+liquibase-3.8.0-bin.tar.gz
+mysql-connector-java-8.0.17.jar
+node-v10.16.3-linux-x64.tar.xz
+
+# If not already present, you must download these files. They are used by our application servers.
+
