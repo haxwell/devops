@@ -1,0 +1,45 @@
+
+USEFUL COMMANDS
+----
+# Copy local changes to devops files to PROD Config Server (cool to think we have one of those)
+rsync -avz APP-NAME/ pi@98.245.226.182:/home/pi/haxwell_infrastructure/ -R
+
+
+
+DEVOPS
+---
+In regards to bringing up a new dev or staging environment for an Ionic Angular based app,
+the process is down to a few scripts, and some instructions you have to copy and paste.
+
+The app specific files are a part of a hierarchy called 'haxwell_infrastructure'. It is a 
+directory structure, and the content within, all used to keep our servers up and running 
+healthily. 
+
+The server setup process works like this.. You bring up a clean Ubuntu droplet. You run 
+a main script, new-server-install.sh, and that script sets up common things like MySQL, SSH,
+Java, etc. Then, the new droplet calls the RPI-1, or the config server, for the install file
+located in the haxwell_infrastructure directory for the given App, and its proposed environment.
+
+So, a request to build a server for DTIM Techprofile would look for files at
+
+dtim-techprofile/
+├── prod
+│   └── the-install-files
+└── staging
+    ├── the-install-files
+
+
+For some reason, perhaps I don't know bash well enough, many commands do not work as expected,
+because of user permissions, subshells, and all that.. so I echo them to the screen, so they
+can be copied and run by the current user, instead of bash.
+
+You will need SSH keys in place on the local machine, to copy to the new droplet.
+
+But yeah, the new server install process is basically run through the DEVELOPER script found at
+dev-machine@~/src/DEVELOPER . It lists a bunch of commands, to run on the droplet, and some for
+the local server. Run them, copy and paste them, and reboot, and you have a new server with
+
+- a Spring Boot REST API
+- in the proposed environment settings
+- secure, iptables and ssh settings in place
+- ready to do automated daily tests

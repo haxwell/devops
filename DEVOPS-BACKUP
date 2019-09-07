@@ -1,0 +1,8 @@
+DEVOPS-BACKUP
+
+There is a daily job that runs which backs up the database, and the images associated with the app.
+
+The script is ~/app-name/bin/create-backup.tar.sh
+
+It creates a directory, ~/app-name/backup/db, in there, it does a mysqldump of the database. It then
+TARs up the ~/app-name dir, and sends it to the backup server, currently RPI1.

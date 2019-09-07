@@ -1,0 +1,62 @@
+Setting up a new ( Ubuntu 18.04.3 LTS ) droplet
+------------------------
+
+From a clean, scratch droplet.
+
+1. Run the following block of commands...
+
+#=== === BEGIN BLOCK
+# Add IPTABLES rules.
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F INPUT
+iptables -F OUTPUT
+iptables -F FORWARD
+
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -j DROP
+# 1b. Make the IPTABLES rules persistent.
+sudo apt update && sudo apt upgrade -y && sudo apt install -y iptables-persistent tree
+# COPY UP TO HERE
+
+# BEGIN COPYING AGAIN HERE DOWN
+# 2. Create the quizki user
+adduser quizki --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password && echo "quizki:password" |     sudo chpasswd && sudo adduser quizki sudo
+# 2d. Lock SSH down some
+sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+sed -i '/^PermitRootLogin no/a AllowUsers quizki' /etc/ssh/sshd_config
+#2e. Create quizki ssh dir
+mkdir /home/quizki/.ssh
+#2f. Copy the authorized_keys file to quizki, make sure its secure and available
+cp .ssh/authorized_keys /home/quizki/.ssh/.
+chmod +r /home/quizki/.ssh/authorized_keys
+chmod 700 /home/quizki/.ssh
+chown quizki /home/quizki/.ssh
+chgrp quizki /home/quizki/.ssh
+echo -e '\n\n\n DONE! Now log out of root, and in as quizki.\n\n\n'
+#=== === END BLOCK
+
+4. CTRL-D from root.. back at localhost.. Copy id_rsa and id_rsa.pub to the new environment.
+
+# from the local dev machine, run..
+scp ~/.ssh/id_rsa quizki@157.230.206.239:/home/quizki/.ssh/id_rsa
+scp ~/.ssh/id_rsa.pub quizki@157.230.206.239:/home/quizki/.ssh/id_rsa.pub
+
+5. Copy the installation script from the config server
+
+# log back in to the droplet
+ssh quizki@157.230.206.239
+scp pi@98.245.226.182:/home/pi/haxwell_infrastructure/new-server-install.sh .
+
+6. run the script to do the app install
+
+# Before you run this, if you are developing this devops process, be sure you've uploaded your changes to the config server! Save some time! Voice of experience!
+./new-server-install.sh -n dtim-techprofile -e staging -a 98.245.226.182 -u pi

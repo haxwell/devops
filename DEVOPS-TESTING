@@ -1,0 +1,8 @@
+DEVOPS-TESTING
+
+A test of the application from a user's perspective, happens every day. 
+
+There is an email sent containing the test reports.
+
+The repo for the ionic app is placed on the server, and there is a script which runs its cypress tests,
+using the local server as the backend. See <mobile-app-name>/bin/automated_test.sh 
