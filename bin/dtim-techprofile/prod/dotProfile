@@ -30,9 +30,9 @@ export HAX_APP_NAME=dtim-techprofile
 export HAX_APP_DB_NAME=dtim_db
 export HAX_APP_ENVIRONMENT=PROD
 
-export JAVA_HOME=/home/quizki/apps/java
-export NODE_HOME=/home/quizki/apps/node
+export JAVA_HOME=/home/quizki/apps/java/current
+export NODE_HOME=/home/quizki/apps/node/current
 
 # set PATH so it includes user's private bin directories
-PATH="$NODE_HOME/current/bin:$JAVA_HOME/current/bin:$HOME/bin:$HOME/.local/bin:$PATH"
+PATH="$NODE_HOME/bin:$JAVA_HOME/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
