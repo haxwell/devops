@@ -62,7 +62,7 @@ echo "cd /home/quizki/src/$HAX_APP_NAME"
 echo "git checkout dev"
 echo "git pull"
 
-echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/dtim-techprofile/src/main/resources/application.properties"
+echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/dtim-techprofile/src/main/resources/application.properties"
 
 echo -e "\n\n\n# END"
 echo "--------------------------------"

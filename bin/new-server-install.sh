@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# HAXWELL INFRASTRUCTURE - Build a brand new droplet to a production ready Hax App instance
+# HAXWELL DEVOPS - Build a brand new droplet to a production ready Hax App instance
 
 # You put the id_rsa and id_rsa.pub files in ~/.ssh
 # You pass in the app name, db name, environment (staging|prod), and the config server's ip

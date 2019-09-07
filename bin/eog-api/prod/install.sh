@@ -13,7 +13,7 @@ mv eog-mobile2 eog-mobile
 cd /home/quizki/apps
 mkdir liquibase
 cd liquibase
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/apps/liquibase-3.8.0-bin.tar.gz liquibase.tar.gz
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/liquibase-3.8.0-bin.tar.gz liquibase.tar.gz
 tar -xvf ./liquibase.tar.gz
 
 echo "[client]" > /home/quizki/.my.cnf
@@ -29,7 +29,7 @@ echo "sudo chgrp quizki /home/quizki/my.cnf"
 echo "sudo chown quizki /home/quizki/apps/liquibase -R"
 echo "sudo chgrp quizki /home/quizki/apps/liquibase -R"
 ## MySQL Connector in Liquibase
-echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/apps/mysql-connector-java-8.0.17.jar /home/quizki/apps/liquibase/lib/."
+echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/mysql-connector-java-8.0.17.jar /home/quizki/apps/liquibase/lib/."
 
 echo -e "#### MYSQL INIT COMMANDS #####"
 echo "echo \"CREATE USER 'springuser_eog'@'localhost' IDENTIFIED BY 'ThePassword';\" > buildTheDB.sql"
@@ -77,7 +77,7 @@ echo "echo '{}' > /home/quizki/src/eog-mobile/cypress.json"
 echo "cd /home/quizki/src/$HAX_APP_NAME"
 echo "# TODO: change this branch name to dev once a proper dev branch is created."
 echo "git checkout cors-without-the-8100-port"
-echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
+echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
 echo "git pull"
 
 echo -e "\n\n\n# END"
