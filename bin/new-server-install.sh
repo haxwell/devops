@@ -66,7 +66,7 @@ echo
 echo SETTING .PROFILE FOR THIS APP
 echo
 scp1() {
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotProfile ~/.profile
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotProfile ~/.profile
 }
 
 scp1
@@ -92,7 +92,7 @@ chown quizki /home/quizki/apps/node -R
 chgrp quizki /home/quizki/apps/node -R
 
 cd node
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/apps/node-v10.16.3-linux-x64.tar.xz node-v10.16.3-linux-x64.tar.xz
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/apps/node-v10.16.3-linux-x64.tar.xz node-v10.16.3-linux-x64.tar.xz
 tar -xvf ./node-v10.16.3-linux-x64.tar.xz
 ln -s node-v10.16.3-linux-x64 current
 }
@@ -112,14 +112,14 @@ chown quizki /home/quizki/apps/java -R
 chgrp quizki /home/quizki/apps/java -R
 
     cd java
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/apps/jdk-8u221-linux-x64.tar.gz ./jdk8221.tar.gz
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/apps/jdk-8u221-linux-x64.tar.gz ./jdk8221.tar.gz
 tar -xvf ./jdk8221.tar.gz
 ln -s jdk1.8.0_221 current
 
 chown quizki /home/quizki/apps/java/current -R
 chgrp quizki /home/quizki/apps/java/current -R
 
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/apps/mysql-connector-java-8.0.17.jar /home/quizki/apps/java/current/lib/.
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/apps/mysql-connector-java-8.0.17.jar /home/quizki/apps/java/current/lib/.
 
 chown quizki /home/quizki/apps/java/current -R
 chgrp quizki /home/quizki/apps/java/current -R
@@ -152,7 +152,7 @@ git config --global user.name "Johnathan James"
 
 appinstall() {
 cd /home/quizki
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell_infrastructure/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/install.sh .
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/install.sh .
 chmod +x install.sh
 chown quizki /home/quizki -R
 chgrp quizki /home/quizki -R
