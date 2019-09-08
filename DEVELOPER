@@ -24,8 +24,7 @@ iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 iptables -A INPUT -j DROP
 # 1b. Make the IPTABLES rules persistent.
-sudo apt update && sudo apt upgrade -y && sudo apt install -y iptables-persistent tree
-# COPY UP TO HERE
+sudo apt update && sudo apt upgrade -y && sudo apt install -y iptables-persistent tree # COPY UP TO HERE
 
 # BEGIN COPYING AGAIN HERE DOWN
 # 2. Create the quizki user
@@ -39,8 +38,8 @@ mkdir /home/quizki/.ssh
 cp .ssh/authorized_keys /home/quizki/.ssh/.
 chmod +r /home/quizki/.ssh/authorized_keys
 chmod 700 /home/quizki/.ssh
-chown quizki /home/quizki/.ssh
-chgrp quizki /home/quizki/.ssh
+chown quizki /home/quizki/.ssh -R
+chgrp quizki /home/quizki/.ssh -R
 echo -e '\n\n\n DONE! Now log out of root, and in as quizki.\n\n\n'
 #=== === END BLOCK
 
