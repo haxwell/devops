@@ -24,7 +24,7 @@ iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 iptables -A INPUT -j DROP
 # 1b. Make the IPTABLES rules persistent.
-sudo apt update && sudo apt upgrade -y && sudo apt install -y iptables-persistent tree # COPY UP TO HERE
+sudo apt update && sudo apt upgrade -y && sudo apt install -y haveged iptables-persistent tree # COPY UP TO HERE
 
 # BEGIN COPYING AGAIN HERE DOWN
 # 2. Create the quizki user
@@ -40,7 +40,7 @@ chmod +r /home/quizki/.ssh/authorized_keys
 chmod 700 /home/quizki/.ssh
 chown quizki /home/quizki/.ssh -R
 chgrp quizki /home/quizki/.ssh -R
-echo -e '\n\n\n DONE! Now log out of root, and in as quizki.\n\n\n'
+echo -e '\n\n\n DONE! You should reboot, and then log in as quizki.\n\n\n'
 #=== === END BLOCK
 
 4. CTRL-D from root.. back at localhost.. Copy id_rsa and id_rsa.pub to the new environment.
@@ -49,6 +49,8 @@ echo -e '\n\n\n DONE! Now log out of root, and in as quizki.\n\n\n'
 NEW_IP_ADDR=165.227.109.239
 scp ~/.ssh/id_rsa quizki@$NEW_IP_ADDR:/home/quizki/.ssh/id_rsa
 scp ~/.ssh/id_rsa.pub quizki@$NEW_IP_ADDR:/home/quizki/.ssh/id_rsa.pub
+
+(NOTE: if ssh hasn't been set up from jump, then on the droplet, you will need to `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`)
 
 5. Copy the installation script from the config server
 
