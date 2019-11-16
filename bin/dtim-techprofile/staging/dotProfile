@@ -27,6 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export HAX_APP_NAME=dtim-techprofile
+export HAX_APP_FRONTEND_NAME=dtim-techprofile-mobile
 export HAX_APP_DB_NAME=dtim_db
 export HAX_APP_ENVIRONMENT=STAGING
 

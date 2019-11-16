@@ -57,6 +57,7 @@ echo 'echo "HAX_APP_DB_NAME=eog_db" >> mycron'
 echo 'echo "HAX_APP_ENVIRONMENT=PROD" >> mycron'
 echo 'echo -e "\n\n" >> mycron'
 echo 'echo "@reboot bash /home/quizki/src/eog-api/bin/onstartup.sh" >> mycron'
+echo 'echo "@reboot bash /home/quizki/src/eog-mobile/bin/onstartup.sh" >> mycron'
 echo 'echo "3 8 * * *  bash /home/quizki/src/eog-api/bin/backup/create-backup-tar.sh" >> mycron'
 echo 'echo "32 15 * * * bash /home/quizki/src/eog-mobile/bin/automated_test.sh >> /home/quizki/todays-automated-tests.out" >> mycron'
 

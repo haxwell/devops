@@ -27,6 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export HAX_APP_NAME=eog-api
+export HAX_APP_FRONTEND_NAME=eog-mobile
 export HAX_APP_DB_NAME=eog_db
 export HAX_APP_ENVIRONMENT=STAGING
 
