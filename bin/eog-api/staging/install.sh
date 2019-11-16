@@ -76,8 +76,7 @@ echo "sudo chgrp quizki src/eog-mobile -R"
 echo "echo '{}' > /home/quizki/src/eog-mobile/cypress.json"
 
 echo "cd /home/quizki/src/$HAX_APP_NAME"
-echo "# TODO: change this branch name to dev once a proper dev branch is created."
-echo "git checkout cors-without-the-8100-port"
+echo "git checkout dev"
 echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
 echo "git pull"
 
