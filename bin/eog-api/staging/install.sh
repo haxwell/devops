@@ -67,6 +67,8 @@ echo 'crontab mycron'
 echo 'rm mycron'
 echo "#"
 
+echo "source ~/.profile"
+
 # Application File Stuff
 ## permissions
 echo "sudo chown quizki src/eog-api -R"
