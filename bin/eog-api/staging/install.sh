@@ -53,6 +53,7 @@ echo -e 'touch mycron'
 echo -e 'crontab mycron'
 #echo new cron into cron file
 echo 'echo "HAX_APP_NAME=eog-api" >> mycron'
+echo 'echo "HAX_APP_FRONTEND_NAME=eog-mobile" >> mycron'
 echo 'echo "HAX_APP_DB_NAME=eog_db" >> mycron'
 echo 'echo "HAX_APP_ENVIRONMENT=STAGING" >> mycron'
 echo 'echo -e "\n\n" >> mycron'
@@ -81,7 +82,7 @@ echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_S
 echo "git pull"
 
 # EOG-API Environment Files
-echo "cd /home/quizki/src/$HAX_APP_FRONTEND_NAME"
+echo "cd /home/quizki/src/${HAX_APP_FRONTEND_NAME}"
 echo "cp src/_environments/environment.${HAX_APP_ENVIRONMENT,,}.js src/_environments/environment.js"
 echo "npm install ionic -g"
 echo "npm install"
