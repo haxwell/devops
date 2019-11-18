@@ -22,6 +22,8 @@ iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp -s localhost --dport 8100 -j ACCEPT
+iptables -A INPUT -j LOG
 iptables -A INPUT -j DROP
 # 1b. Make the IPTABLES rules persistent.
 sudo apt update && sudo apt upgrade -y && sudo apt install -y haveged iptables-persistent tree # COPY UP TO HERE
