@@ -83,7 +83,9 @@ echo "git pull"
 
 # EOG-API Environment Files
 echo "cd /home/quizki/src/$HAX_APP_FRONTEND_NAME"
-echo "cp src/_environments/environment.${HAX_APP_ENVIRONMENT,,}.ts src/_environments/environment.ts"
+echo "cp src/_environments/environment.${HAX_APP_ENVIRONMENT,,}.js src/_environments/environment.js"
+echo "npm install ionic -g"
+echo "npm install"
 
 echo -e "\n\n\n# END"
 echo "--------------------------------"
