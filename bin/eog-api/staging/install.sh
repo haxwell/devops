@@ -78,17 +78,18 @@ echo "sudo chgrp quizki src/eog-mobile -R"
 
 echo "echo '{}' > /home/quizki/src/eog-mobile/cypress.json"
 
-echo "cd /home/quizki/src/$HAX_APP_NAME"
-echo "git checkout dev"
-echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
-echo "git pull"
-
 # EOG-API Environment Files
-echo "cd /home/quizki/src/${HAX_APP_FRONTEND_NAME}"
+echo "cd /home/quizki/src/eog-mobile"
 echo "git checkout dev"
 echo "cp src/_environments/environment.${HAX_APP_ENVIRONMENT,,}.js src/_environments/environment.js"
 echo "npm install ionic -g"
 echo "npm install"
+
+# EOG-API app specific settings
+echo "cd /home/quizki/src/$HAX_APP_NAME"
+echo "git checkout dev"
+echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
+echo "git pull"
 
 echo -e "\n\n\n# END"
 echo "--------------------------------"
