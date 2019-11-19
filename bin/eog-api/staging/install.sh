@@ -84,6 +84,7 @@ echo "git checkout dev"
 echo "cp src/_environments/environment.${HAX_APP_ENVIRONMENT,,}.js src/_environments/environment.js"
 echo "npm install ionic -g"
 echo "npm install"
+echo "sed -i '/_from/a \"main\": \"./lib/stomp.min.js\",' node_modules/stompjs/package.json"
 
 # EOG-API app specific settings
 echo "cd /home/quizki/src/$HAX_APP_NAME"
