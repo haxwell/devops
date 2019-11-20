@@ -87,7 +87,7 @@ echo "npm install"
 echo "sed -i '/_from/a \"main\": \"./lib/stomp.min.js\",' node_modules/stompjs/package.json"
 
 # EOG-API app specific settings
-echo "cd /home/quizki/src/$HAX_APP_NAME"
+echo "cd /home/quizki/src/eog-api"
 echo "git checkout dev"
 echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/eog-api/src/main/resources/application.properties"
 echo "git pull"
