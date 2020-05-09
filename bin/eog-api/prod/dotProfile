@@ -34,6 +34,9 @@ export HAX_APP_ENVIRONMENT=PROD
 export JAVA_HOME=/home/quizki/apps/java/current
 export NODE_HOME=/home/quizki/apps/node/current
 
+# java.security setting is to give Tomcat a non-blocking source of random numbers, so the server will not block on startup while generating session keys.
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128M -Djava.security.egd=file:/dev/./urandom" 
+
 # set PATH so it includes user's private bin directories
 PATH="$NODE_HOME/bin:$JAVA_HOME/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
