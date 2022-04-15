@@ -37,9 +37,9 @@ echo "sudo sed -i '/^mailhub=smtp.gmail.com:587/a AuthUser=kingsvotingapp@gmail.
 echo -e '\n\ntouch mycron'
 echo -e 'crontab mycron'
 #echo new cron into cron file
-echo 'echo "HAX_APP_NAME=$HAX_APP_NAME" >> mycron'
-echo 'echo "HAX_APP_DB_NAME=$HAX_APP_DB_NAME" >> mycron'
-echo 'echo "HAX_APP_ENVIRONMENT=$HAX_APP_ENVIRONMENT" >> mycron'
+echo 'echo "HAX_APP_NAME=voting-app-api" >> mycron'
+echo 'echo "HAX_APP_DB_NAME=voting_db" >> mycron'
+echo 'echo "HAX_APP_ENVIRONMENT=STAGING" >> mycron'
 echo 'echo -e "\n\n" >> mycron'
 echo 'echo "@reboot bash /home/quizki/src/voting-app-api/bin/onstartup.sh" >> mycron'
 echo 'echo "50 7 * * *  bash /home/quizki/src/voting-app-api/bin/backup/create-backup-tar.sh" >> mycron'

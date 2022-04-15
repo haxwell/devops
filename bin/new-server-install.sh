@@ -66,7 +66,7 @@ echo
 echo SETTING .PROFILE FOR THIS APP
 echo
 scp1() {
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotProfile ~/.profile
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotProfile /home/quizki/.profile
 }
 
 scp1
