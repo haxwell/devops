@@ -23,6 +23,7 @@ echo "echo \"CREATE USER 'springuser_voting'@'localhost' IDENTIFIED BY 'supersec
 echo "echo \"GRANT ALL ON voting_db.* TO 'springuser_voting'@'localhost';\" >> buildTheDB.sql";
 echo "echo \"CREATE DATABASE voting_db;\" >> buildTheDB.sql";
 echo -e '\nsudo mysql -u root < buildTheDB.sql'
+echo -e '\nrm buildTheDB.sql'
 echo "#######"
 
 # SSMTP Mail Settings
