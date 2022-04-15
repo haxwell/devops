@@ -92,9 +92,9 @@ chown quizki /home/quizki/apps/node -R
 chgrp quizki /home/quizki/apps/node -R
 
 cd node
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/node-v10.16.3-linux-x64.tar.xz node-v10.16.3-linux-x64.tar.xz
-tar -xvf ./node-v10.16.3-linux-x64.tar.xz
-ln -s node-v10.16.3-linux-x64 current
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/node-v16.14.2-linux-x64.tar.xz node-v16.14.2-linux-x64.tar.xz
+tar -xvf ./node-v16.14.2-linux-x64.tar.xz
+ln -s node-v16.14.2-linux-x64 current
 }
 
 scp1
@@ -112,9 +112,9 @@ chown quizki /home/quizki/apps/java -R
 chgrp quizki /home/quizki/apps/java -R
 
     cd java
-scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/jdk-8u221-linux-x64.tar.gz ./jdk8221.tar.gz
-tar -xvf ./jdk8221.tar.gz
-ln -s jdk1.8.0_221 current
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/jdk-17_linux-x64_bin.tar.gz ./jdk17.tar.gz
+tar -xvf ./jdk17.tar.gz
+ln -s jdk-17 current
 
 chown quizki /home/quizki/apps/java/current -R
 chgrp quizki /home/quizki/apps/java/current -R
