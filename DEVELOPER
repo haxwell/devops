@@ -26,7 +26,7 @@ iptables -A INPUT -p tcp -m tcp -s localhost --dport 8100 -j ACCEPT
 iptables -A INPUT -j LOG
 iptables -A INPUT -j DROP
 # 1b. Make the IPTABLES rules persistent.
-sudo apt update && sudo apt upgrade -y && sudo apt install -y haveged iptables-persistent tree # COPY UP TO HERE
+sudo apt update && sudo apt upgrade -y && sudo apt install -y haveged iptables-persistent tree ssmtp net-tools # COPY UP TO HERE
 
 # BEGIN COPYING AGAIN HERE DOWN
 # 2. Create the quizki user
