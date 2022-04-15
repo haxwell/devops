@@ -59,7 +59,7 @@ echo "sudo chgrp quizki src/voting-app-mobile -R"
 
 echo "echo '{}' > /home/quizki/src/voting-app-mobile/cypress.json"
 
-echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotprofile /home/quizki/.profile"
+# echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotprofile /home/quizki/.profile"
 
 echo "cd /home/quizki/src/$HAX_APP_NAME"
 echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/application.properties /home/quizki/src/voting-app-api/src/main/resources/application.properties"
