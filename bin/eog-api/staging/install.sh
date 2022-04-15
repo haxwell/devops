@@ -23,6 +23,10 @@ echo "password=ThePassword" >> /home/quizki/.my.cnf
 
 echo -e "\n\n\n# BEGIN"
 
+# EOG-API .profile setup
+echo "cd /home/quizki/"
+echo "scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/bin/$HAX_APP_NAME/$HAX_APP_ENVIRONMENT/dotProfile /home/quizki/.profile"
+
 # Liquibase 
 echo "sudo chown quizki /home/quizki/my.cnf"
 echo "sudo chgrp quizki /home/quizki/my.cnf"
