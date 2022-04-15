@@ -1,0 +1,26 @@
+
+SERVER FOUNDATION
+1. create the new ubuntu based droplet in digitalocean. Pick at least the third cheapest option so you'll have enough resources.
+    part of this setup will be giving it your ssh keys. be sure what you have locally is going to this new droplet, so you can connect.
+
+2. ssh root@111.111.111.111 
+
+3. From the DEVELOPER file, follow the instructions for the set of commands to run to get the server foundation in place.
+
+4. log out and copy the ssh from the local machine to quizki on the remote machine
+
+5. run the new-server-install script from the config server.
+
+
+
+
+
+HAX APP FOUNDATION
+After the server foundation is in place, we copy a script from the haxwell devops server, which will lay the foundation for the specific hax app
+to be run on the server.
+
+> scp pi@98.245.226.182:/home/pi/haxwell-devops/bin/new-server-install.sh .
+> ./new-server-install.sh -n dtim-techprofile -e staging -a 98.245.226.182 -u pi
+
+This runs a general install script, which then calls an application specific script. The environment variables are set in the general script, 
+based off of the parameters passed in. The application specific script inherits these when it runs. I think.
