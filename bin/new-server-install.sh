@@ -149,6 +149,15 @@ git config --global user.email "haxwell@gmail.com"
 git config --global user.name "Johnathan James"
 
 
+####
+# SSMTP
+####
+echo 
+echo INSTALLING SSMTP
+echo
+cd /home/quizki/apps
+apt install -y ssmtp
+
 
 appinstall() {
 cd /home/quizki
