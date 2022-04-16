@@ -142,21 +142,17 @@ apt install -y mysql-server
 echo 
 echo INSTALLING MAVEN 
 echo
-cd /home/quizki/apps/
-apt install -y maven
+
+mkdir /home/quizki/apps/maven
+scp $HAX_CONFIG_SERVER_USER_NAME@$HAX_CONFIG_SERVER_IP:/home/$HAX_CONFIG_SERVER_USER_NAME/haxwell-devops/apps/apache-maven-3.8.5-bin.tar.gz /home/quizki/apps/maven/apache-maven-3.8.5-bin.tar.gz
+cd /home/quizki/apps/maven
+tar -xf apache-maven-3.8.5-bin.tar.gz
+ln -s apache-maven-3.8.5 current
+
 
 git config --global user.email "haxwell@gmail.com"
 git config --global user.name "Johnathan James"
 
-
-####
-# SSMTP
-####
-echo 
-echo INSTALLING SSMTP
-echo
-cd /home/quizki/apps
-apt install -y ssmtp
 
 
 appinstall() {
